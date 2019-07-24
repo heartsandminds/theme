@@ -6,6 +6,8 @@
  * @since 1.0.0
  */
 
+add_theme_support( 'post-thumbnails' );
+
 function ham_register_menus() {
     register_nav_menus(
       array(
