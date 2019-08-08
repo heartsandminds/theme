@@ -14,12 +14,12 @@ https://heartsandminds.github.io/frontend/?p=templates-homepage
 
 Articles (posts) can be set to one or more categories so it appears on the required pages.
 
-| Category    | Description                               |
-| ----------- | ----------------------------------------- |
-| Front page  | Display article on the homepage           |
-| News        | Display article on the news page          |
-| How we help | Display article on the 'How we help' page |
-| Who we help | Display article on the 'Who we help' page |
+| Category    | Description                                    |
+| ----------- | ---------------------------------------------- |
+| Front page  | Displays the article on the homepage           |
+| News        | Displays the article on the news page          |
+| How we help | Displays the article on the 'How we help' page |
+| Who we help | Displays the article on the 'Who we help' page |
 
 ## Developing
 
@@ -27,6 +27,13 @@ Articles (posts) can be set to one or more categories so it appears on the requi
 
 * Download [Wordpress](https://en-gb.wordpress.org/download/) and extract zip file into a folder named 'heartsandminds' within the htdocs folder of your development server (e.g. for MAMP users it would be Applications/MAMP/htdocs/heartsandminds)
 
-* Navigate to http://localhost:8888/phpMyAdmin/?lang=en and create a new database called 'hamdev' for developing you can use the account name and password 'root'
+* Clone this repo into the themes folder - heartsandminds/wp-conent/themes: 
+```
+git clone https://github.com/heartsandminds/theme.git
+```
 
-* Navigate to http://localhost:8888/heartsandminds and follow the installation instructions using the MySQL details from the previous step.
+* Download the development database file from [database.sql](https://github.com/heartsandminds/database)
+
+* Navigate to http://localhost:8888/phpMyAdmin/?lang=en and import the database file.
+
+* Navigate to http://localhost:8888/heartsandminds to view the development website.
