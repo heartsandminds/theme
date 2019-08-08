@@ -6,6 +6,9 @@
  * @since 1.0.0
  */
 ?>
+
+<?php get_template_part('donate'); ?>
+
 <footer class="o-footer" role="contentinfo">
     <div class="o-footer__content">
         <div class="o-footer__col">

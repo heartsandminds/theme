@@ -7,7 +7,18 @@
  */
 
 get_header();
+
+if ( has_post_thumbnail() ) {
 ?>
+<div class="m-hero">
+	<div class="a-image">
+		<img src="<?php the_post_thumbnail_url(); ?>" alt="">
+	</div>
+</div>
+<?php
+} 
+?>
+
 <!-- Main content start -->
 <main class="t-full-width">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

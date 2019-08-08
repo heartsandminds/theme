@@ -18,7 +18,7 @@
 <body>
 <header class="o-header" role="banner">
 	<div class="o-header__content">
-		<a href="<?php home_url(); ?>" class="m-logo-link">
+		<a href="<?php echo home_url(); ?>" class="m-logo-link">
 			<img class="a-logo" src="<?php bloginfo('template_directory'); ?>/images/logo/logo.png" alt="hearts and minds logo">
 		</a>
 		<button class="m-navigation__menu-button">Menu</button>
