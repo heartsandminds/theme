@@ -9,7 +9,7 @@
 get_header();
 ?>
 <!-- Main content start -->
-<main class="t-full-width">
+<main class="t-full-width" id="main-section">
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <article>
         <h1 class="a-heading u-underline"><?php the_title() ?></h1>

@@ -20,7 +20,7 @@ if ( has_post_thumbnail() ) {
 ?>
 
 <!-- Main content start -->
-<main class="t-full-width">
+<main class="t-full-width" id="main-section">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<h1 class="a-heading u-underline u-align-center"><?php the_title() ?></h1>
 	<?php endwhile; endif; ?>
@@ -58,12 +58,11 @@ if ( $news_query->have_posts() ) : ?>
     <p><?php _e( 'No news articles are currently available.' ); ?></p>
 <?php endif; ?>
 
-<h2 class="a-heading u-underline u-align-center">Who we help</h2>
-
 <?php
 $who_we_help_query = new WP_Query( array( 'category_name' => 'who-we-help' ) );
 
 if ( $who_we_help_query->have_posts() ) : ?>
+    <h2 class="a-heading u-underline u-align-center">Who we help</h2>
     <div class="o-cards">
     <?php while ( $who_we_help_query->have_posts() ) : $who_we_help_query->the_post(); ?>
         <div class="m-card">
@@ -89,8 +88,6 @@ if ( $who_we_help_query->have_posts() ) : ?>
     </div>
     <?php wp_reset_postdata(); ?>
  
-<?php else : ?>
-    <p><?php _e( 'No who we help articles are currently available.' ); ?></p>
 <?php endif; ?>
 </main>
 

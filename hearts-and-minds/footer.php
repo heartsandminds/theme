@@ -29,7 +29,7 @@
                     Email:<br>
                     <input class="o-footer__input" type="text" name="email">
                 </label>
-                <button class="m-button" type="submit">Sign up</button>
+                <button class="a-button" type="submit">Sign up</button>
             </form>
         </div>
         <div class="o-footer__col">

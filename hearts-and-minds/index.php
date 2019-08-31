@@ -28,7 +28,7 @@ if( $news_post ) {
 ?>
 
 <!-- Main content start -->
-<main class="t-full-width">
+<main class="t-full-width" id="main-section">
 <h1 class="a-heading u-underline">News</h1>
 <?php 
 $news_query = new WP_Query( array( 'category_name' => 'news' ) );

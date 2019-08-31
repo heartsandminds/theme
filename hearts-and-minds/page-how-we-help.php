@@ -55,8 +55,6 @@ if ( $who_we_help_query->have_posts() ) : ?>
     </div>
     <?php wp_reset_postdata(); ?>
  
-<?php else : ?>
-    <p><?php _e( 'No who we help articles are currently available.' ); ?></p>
 <?php endif; ?>
 </main>
 

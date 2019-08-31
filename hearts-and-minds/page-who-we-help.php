@@ -20,7 +20,7 @@ if ( has_post_thumbnail() ) {
 ?>
 
 <!-- Main content start -->
-<main class="t-full-width">
+<main class="t-full-width" id="main-section">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<h1 class="a-heading u-underline u-align-center"><?php the_title() ?></h1>
         <?php the_content() ?>
@@ -55,12 +55,10 @@ if ( $who_we_help_query->have_posts() ) : ?>
     </div>
     <?php wp_reset_postdata(); ?>
  
-<?php else : ?>
-    <p><?php _e( 'No who we help articles are currently available.' ); ?></p>
 <?php endif; ?>
 </main>
 
 <!-- Main content end -->
 <?php
-get_footer();
+get_footer( 'donate' );
 ?>

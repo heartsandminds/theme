@@ -9,7 +9,7 @@
 get_header();
 ?>
 <!-- Main content start -->
-<main class="t-full-width">
+<main class="t-full-width" id="main-section">
 	<h1>Page not found</h1>
 </main>
 <!-- Main content end -->
