@@ -17,6 +17,58 @@ window.addEventListener("resize", function() {
     }
 });
 
+// Setup menu dropdowns to open on click
+var globalNav = document.querySelectorAll('.m-global-navigation__list-item');
+for (var n = 0; n < globalNav.length; n++) {
+    var subNav = globalNav[n].querySelector('.m-global-navigation__sub-menu');
+    if (!subNav) {
+        continue;
+    }
+
+    var navLink = globalNav[n].querySelector('.a-menu-link');
+    if (navLink) {
+        navLink.setAttribute("aria-haspopup", "true");
+        navLink.setAttribute("aria-expanded", "false");
+    }
+
+    globalNav[n].addEventListener("click", function(e) {
+        var subNav = e.target.parentElement.querySelector('.m-global-navigation__sub-menu');
+        if (!subNav) {
+            return false;
+        }
+
+        var openNav = document.querySelector('.m-global-navigation__list-item--active');
+        if (openNav) {
+            var navLink = openNav.querySelector('.a-menu-link');
+            openNav.classList.remove('m-global-navigation__list-item--active');
+            navLink.setAttribute("aria-expanded", "false");
+
+            if (openNav === e.currentTarget) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                return false;
+            }
+        }
+
+        e.currentTarget.classList.toggle('m-global-navigation__list-item--active');
+        var currentLink = e.currentTarget.querySelector('.a-menu-link');
+        currentLink.setAttribute("aria-expanded", "true");
+        e.preventDefault();
+        e.stopImmediatePropagation();
+    });
+}
+
+// Hide open menu when user clicks away from the menu
+document.addEventListener("click", function(e) {
+    if (!e.target.classList.contains('m-global-navigation__list-item')) {
+        var openNav = document.querySelector('.m-global-navigation__list-item--active');
+        if (!openNav) {
+            return;
+        }
+        openNav.classList.remove('m-global-navigation__list-item--active');
+    }
+});
+
 // Focus management
 document.addEventListener("mousedown", function() {
     document.body.classList.remove('keypress');

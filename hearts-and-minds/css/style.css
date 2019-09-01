@@ -230,6 +230,7 @@ ul, ol {
 
 .m-global-navigation {
   align-self: center;
+  display: flex;
   margin-left: auto;
   padding-top: 20px;
   width: 100%; }
@@ -288,6 +289,26 @@ ul, ol {
     display: none; }
   .js .m-global-navigation__list {
     display: flex; } }
+
+.m-global-navigation__sub-menu {
+  display: none;
+  padding: 20px 0;
+  position: absolute;
+  z-index: 1; }
+  .m-global-navigation__sub-menu .m-global-navigation__list-item {
+    padding-bottom: 12px;
+    position: relative;
+    background: #ffffff;
+    display: block; }
+    .m-global-navigation__sub-menu .m-global-navigation__list-item:last-child {
+      border-radius: 0 0 12px 12px;
+      padding-bottom: 20px; }
+
+.m-global-navigation__list-item--active > a {
+  border-bottom: 4px solid #DA3832; }
+
+.m-global-navigation__list-item--active .m-global-navigation__sub-menu {
+  display: block; }
 
 .m-logo-link {
   max-width: 250px;

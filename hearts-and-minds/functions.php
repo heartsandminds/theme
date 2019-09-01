@@ -20,10 +20,20 @@ add_action( 'init', 'ham_register_menus' );
 
 function add_menu_link_class($atts, $item, $args)
 {
-    $atts['class'] = 'm-footer-navigation__list-item';
+    if( $args->theme_location == 'header-menu' ) {
+        $atts['class'] = 'a-menu-link';
+    }
+    if( $args->theme_location == 'footer-menu' ) {
+      $atts['class'] = 'm-footer-navigation__list-item';
+    }
     return $atts;
 }
 add_filter('nav_menu_link_attributes', 'add_menu_link_class', 1, 10);
+
+function add_sub_menu_link_class() {
+  return array('m-global-navigation__sub-menu');
+}
+add_action('nav_menu_submenu_css_class', 'add_sub_menu_link_class');
 
 function my_css_attributes_filter($var) {
     return is_array($var) ? array_intersect($var, array('current-menu-item')) : '';
