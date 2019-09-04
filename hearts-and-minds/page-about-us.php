@@ -1,6 +1,6 @@
 <?php
 /**
- * The who-we-help template file
+ * The about-us template file
  *
  * @package HeartsAndMinds
  * @since 1.0.0
@@ -20,7 +20,7 @@ if ( has_post_thumbnail() ) {
 ?>
 
 <!-- Main content start -->
-<main class="t-full-width" id="main-section">
+<main class="t-full-width">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<h1 class="a-heading u-underline u-align-center"><?php the_title() ?></h1>
         <?php the_content() ?>
@@ -38,6 +38,7 @@ $args = array(
 $who_we_help_query = new WP_Query( $args );
 
 if ( $who_we_help_query->have_posts() ) : ?>
+    <h2 class="a-heading u-underline u-align-center">More about Hearts & Minds</h2>  
     <div class="o-cards">
     <?php while ( $who_we_help_query->have_posts() ) : $who_we_help_query->the_post(); ?>
         <div class="m-card">
@@ -52,12 +53,10 @@ if ( $who_we_help_query->have_posts() ) : ?>
             </div>
     
             <div class="m-card__text">
-                <h3 class="a-heading m-card__heading"><?php the_title(); ?></h3>
+                <h3 class="a-heading m-card__heading">
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                </h3>
             </div>
-
-            <a class="m-card__link" href="<?php the_permalink(); ?>">
-                Read more<span class="u-visually-hidden"> about <?php the_title(); ?></span>
-            </a>  
         </div>
     <?php endwhile; ?>
     </div>
@@ -68,5 +67,5 @@ if ( $who_we_help_query->have_posts() ) : ?>
 
 <!-- Main content end -->
 <?php
-get_footer( 'donate' );
+get_footer('donate');
 ?>

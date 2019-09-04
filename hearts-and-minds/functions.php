@@ -18,7 +18,7 @@ function ham_register_menus() {
 }
 add_action( 'init', 'ham_register_menus' );
 
-function add_menu_link_class($atts, $item, $args)
+function add_menu_link_attr($atts, $item, $args)
 {
     if( $args->theme_location == 'header-menu' ) {
         $atts['class'] = 'a-menu-link';
@@ -28,10 +28,15 @@ function add_menu_link_class($atts, $item, $args)
     }
     return $atts;
 }
-add_filter('nav_menu_link_attributes', 'add_menu_link_class', 1, 10);
+add_filter('nav_menu_link_attributes', 'add_menu_link_attr', 1, 10);
+
+function add_menu_link_class() {
+    return array('m-global-navigation__list-item');
+}
+add_filter( 'nav_menu_css_class', 'add_menu_link_class', 10, 4 );
 
 function add_sub_menu_link_class() {
-  return array('m-global-navigation__sub-menu');
+    return array('m-global-navigation__sub-menu');
 }
 add_action('nav_menu_submenu_css_class', 'add_sub_menu_link_class');
 

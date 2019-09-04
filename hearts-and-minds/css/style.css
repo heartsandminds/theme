@@ -82,6 +82,10 @@ h2 {
 h3 {
   font-family: 'OpenSans-Bold', sans-serif;
   font-size: 1.875rem; }
+  h3 a {
+    text-decoration: none; }
+    h3 a:hover {
+      text-decoration: underline; }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 1em 0; }
@@ -179,11 +183,9 @@ ul, ol {
   box-shadow: 0 5px 15px rgba(176, 176, 176, 0.5);
   border-radius: 10px;
   display: flex;
-  flex: 1;
-  flex-basis: calc((60rem - 100%) * 999);
   flex-direction: column;
   margin: 25px;
-  min-width: 25%;
+  width: 100%;
   overflow: hidden; }
   .m-card .m-card__text {
     padding: 18px 20px; }
@@ -193,6 +195,14 @@ ul, ol {
     color: #da3832; }
   .m-card .m-card__link {
     margin: auto 15px 20px; }
+
+@media screen and (min-width: 768px) {
+  .m-card {
+    width: calc(50% - 50px); } }
+
+@media screen and (min-width: 1024px) {
+  .m-card {
+    width: calc(33.3333% - 50px); } }
 
 .m-footer-navigation {
   align-self: center;
@@ -206,22 +216,21 @@ ul, ol {
   list-style-type: none;
   margin: 0;
   padding: 10px; }
-  .m-footer-navigation__list .m-footer-navigation__list-item:not(:last-child):after {
+  .m-footer-navigation__list .m-global-navigation__list-item {
+    padding: 2px 20px 2px 5px; }
+    .m-footer-navigation__list .m-global-navigation__list-item:not(:last-child):after {
+      content: '';
+      border-right: 1px solid white;
+      padding-right: 10px; }
+    .m-footer-navigation__list .m-global-navigation__list-item a {
+      color: #ffffff;
+      text-decoration: underline; }
+      .m-footer-navigation__list .m-global-navigation__list-item a:hover {
+        text-decoration: none; }
+  .m-footer-navigation__list .m-global-navigation__list-item:not(:last-child):after {
     content: '';
     border-right: 1px solid white;
     padding-right: 20px; }
-
-.m-footer-navigation__list-item {
-  padding: 2px 20px 2px 5px; }
-  .m-footer-navigation__list-item:not(:last-child):after {
-    content: '';
-    border-right: 1px solid white;
-    padding-right: 10px; }
-  .m-footer-navigation__list-item a {
-    color: #ffffff;
-    text-decoration: underline; }
-    .m-footer-navigation__list-item a:hover {
-      text-decoration: none; }
 
 .js .m-global-navigation {
   flex-direction: column;
@@ -398,7 +407,9 @@ ul, ol {
   padding-right: 20px;
   width: 75%; }
   .o-donate__text p {
-    margin: 0; }
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 0; }
 
 .o-donate__button {
   display: flex;

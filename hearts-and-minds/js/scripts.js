@@ -13,8 +13,11 @@ window.addEventListener("resize", function() {
     if (window.matchMedia('(min-width:1200px)').matches) {
         expanded = true;
         menu.hidden = false;
-        hamburger.setAttribute('aria-expanded', expanded);
     }
+    else {
+        menu.hidden = true;
+    }
+    hamburger.setAttribute('aria-expanded', !expanded);
 });
 
 // Setup menu dropdowns to open on click

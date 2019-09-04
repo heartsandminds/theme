@@ -27,7 +27,15 @@ if ( has_post_thumbnail() ) {
 	<?php endwhile; endif; ?>
 <?php 
 
-$who_we_help_query = new WP_Query( array( 'category_name' => 'how-we-help' ) );
+$args = array(
+    'post_type'      => 'page',
+    'posts_per_page' => -1,
+    'post_parent'    => $post->ID,
+    'order'          => 'ASC',
+    'orderby'        => 'menu_order'
+ );
+
+$who_we_help_query = new WP_Query( $args );
 
 if ( $who_we_help_query->have_posts() ) : ?>
     <div class="o-cards">
@@ -44,12 +52,10 @@ if ( $who_we_help_query->have_posts() ) : ?>
             </div>
     
             <div class="m-card__text">
-                <h3 class="a-heading m-card__heading"><?php the_title(); ?></h3>
+                <h3 class="a-heading m-card__heading">
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                </h3>
             </div>
-
-            <a class="m-card__link" href="<?php the_permalink(); ?>">
-                Read more<span class="u-visually-hidden"> about <?php the_title(); ?></span>
-            </a>  
         </div>
     <?php endwhile; ?>
     </div>
@@ -60,5 +66,5 @@ if ( $who_we_help_query->have_posts() ) : ?>
 
 <!-- Main content end -->
 <?php
-get_footer();
+get_footer('donate');
 ?>
