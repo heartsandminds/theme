@@ -67,7 +67,7 @@
         ?>
     </nav>
 </footer>
-<script charset="utf-8" src="<?php bloginfo('template_directory'); ?>/js/scripts.js"></script>
+<script charset="utf-8" src="<?php bloginfo('template_directory'); ?>/js/scripts.js" async></script>
 </body>
 </html>
 <?php wp_footer(); ?>
