@@ -10,7 +10,7 @@ get_header();
 
 if ( has_post_thumbnail() ) {
 ?>
-<div class="m-hero">
+<div class="c-hero">
 	<div class="a-image">
 		<img src="<?php the_post_thumbnail_url(); ?>" alt="">
 	</div>
@@ -44,10 +44,10 @@ $who_we_help_query = new WP_Query( $args );
 
 if ( $who_we_help_query->have_posts() ) : ?>
 </div>
-    <div class="o-team-members">
+    <div class="c-team-members">
     <?php while ( $who_we_help_query->have_posts() ) : $who_we_help_query->the_post(); ?>
-        <div class="m-team-member">
-            <div class="a-image m-team-member__image">
+        <div class="c-team-member">
+            <div class="a-image c-team-member__image">
                 <?php 
                     if ( has_post_thumbnail() ) {
                     ?>
@@ -56,10 +56,10 @@ if ( $who_we_help_query->have_posts() ) : ?>
                     } 
                 ?>
             </div>
-            <div class="m-team-member__text">
-                <p class="m-team-member__name"><?php the_title(); ?></p>
-                <p class="m-team-member__title"><?php echo get_field( "title" ); ?></p>
-                <a class="m-team-member__email" href="mailto:<?php echo get_field( "email" ); ?>"><?php echo get_field( "email" ); ?></a>
+            <div class="c-team-member__text">
+                <p class="c-team-member__name"><?php the_title(); ?></p>
+                <p class="c-team-member__title"><?php echo get_field( "title" ); ?></p>
+                <a class="c-team-member__email" href="mailto:<?php echo get_field( "email" ); ?>"><?php echo get_field( "email" ); ?></a>
             </div>
         </div>
     <?php endwhile; ?>
@@ -85,10 +85,10 @@ $who_we_help_query = new WP_Query( $args );
 
 if ( $who_we_help_query->have_posts() ) : ?>
     <h2 class="a-heading u-underline u-align-center">Our practitioners</h2>
-    <div class="o-team-members">
+    <div class="c-team-members">
     <?php while ( $who_we_help_query->have_posts() ) : $who_we_help_query->the_post(); ?>
-        <div class="m-team-member m-team-member--practitioner">
-            <div class="a-image m-team-member__image">
+        <div class="c-team-member c-team-member--practitioner">
+            <div class="a-image c-team-member__image">
                 <?php 
                     if ( has_post_thumbnail() ) {
                     ?>
@@ -97,9 +97,9 @@ if ( $who_we_help_query->have_posts() ) : ?>
                     } 
                 ?>
             </div>
-            <div class="m-team-member__text">
-                <p class="m-team-member__name"><?php the_title(); ?></p>
-                <p class="m-team-member__description"><?php echo get_field( "description" ); ?></p>
+            <div class="c-team-member__text">
+                <p class="c-team-member__name"><?php the_title(); ?></p>
+                <p class="c-team-member__description"><?php echo get_field( "description" ); ?></p>
             </div>
         </div>
     <?php endwhile; ?>
@@ -125,10 +125,10 @@ $who_we_help_query = new WP_Query( $args );
 
 if ( $who_we_help_query->have_posts() ) : ?>
     <h2 class="a-heading u-underline u-align-center">Board of tustees</h2>
-    <div class="o-team-members">
+    <div class="c-team-members">
     <?php while ( $who_we_help_query->have_posts() ) : $who_we_help_query->the_post(); ?>
-        <div class="m-team-member m-team-member--trustee">
-            <div class="a-image m-team-member__image">
+        <div class="c-team-member c-team-member--trustee">
+            <div class="a-image c-team-member__image">
                 <?php 
                     if ( has_post_thumbnail() ) {
                     ?>
@@ -137,9 +137,9 @@ if ( $who_we_help_query->have_posts() ) : ?>
                     } 
                 ?>
             </div>
-            <div class="m-team-member__text">
-                <p class="m-team-member__name"><?php the_title(); ?></p>
-                <p class="m-team-member__description"><?php echo get_field( "description" ); ?></p>
+            <div class="c-team-member__text">
+                <p class="c-team-member__name"><?php the_title(); ?></p>
+                <p class="c-team-member__description"><?php echo get_field( "description" ); ?></p>
             </div>
         </div>
     <?php endwhile; ?>

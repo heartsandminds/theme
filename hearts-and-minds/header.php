@@ -17,21 +17,21 @@
 <?php do_action('wp_head'); ?>
 </head>
 <body>
-<div class="m-skip-links">
-	<a class="m-skip-links__link" href="#main-section">Skip to main content</a>
+<div class="c-skip-links">
+	<a class="c-skip-links__link" href="#main-section">Skip to main content</a>
 </div>
-<header class="o-header" role="banner">
-	<div class="o-header__content">
-		<a href="<?php echo home_url(); ?>" class="m-logo-link">
+<header class="c-header" role="banner">
+	<div class="c-header__content">
+		<a href="<?php echo home_url(); ?>" class="c-logo-link">
 			<img class="a-logo" src="<?php bloginfo('template_directory'); ?>/images/logo/logo.png" alt="hearts and minds logo">
 		</a>
-		<button class="m-global-navigation__menu-button">Menu</button>
-		<nav class="m-global-navigation">
+		<button class="c-global-navigation__menu-button">Menu</button>
+		<nav class="c-global-navigation">
         <?php
 			wp_nav_menu(
 				array( 
 					'theme_location' => 'header-menu',
-					'menu_class' => 'm-global-navigation__list'
+					'menu_class' => 'c-global-navigation__list'
 				)
 			);
 			?>

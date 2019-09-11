@@ -10,7 +10,7 @@ get_header();
 
 if ( has_post_thumbnail() ) {
 ?>
-<div class="m-hero">
+<div class="c-hero">
 	<div class="a-image">
 		<img src="<?php the_post_thumbnail_url(); ?>" alt="">
 	</div>
@@ -38,9 +38,9 @@ $args = array(
 $who_we_help_query = new WP_Query( $args );
 
 if ( $who_we_help_query->have_posts() ) : ?>
-    <div class="o-cards">
+    <div class="c-cards">
     <?php while ( $who_we_help_query->have_posts() ) : $who_we_help_query->the_post(); ?>
-        <div class="m-card">
+        <div class="c-card">
             <div class="a-image ">
             <?php 
                 if ( has_post_thumbnail() ) {
@@ -51,8 +51,8 @@ if ( $who_we_help_query->have_posts() ) : ?>
                 ?>
             </div>
     
-            <div class="m-card__text">
-                <h3 class="a-heading m-card__heading">
+            <div class="c-card__text">
+                <h3 class="a-heading c-card__heading">
                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h3>
             </div>

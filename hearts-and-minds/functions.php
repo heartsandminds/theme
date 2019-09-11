@@ -24,19 +24,19 @@ function add_menu_link_attr($atts, $item, $args)
         $atts['class'] = 'a-menu-link';
     }
     if( $args->theme_location == 'footer-menu' ) {
-      $atts['class'] = 'm-footer-navigation__list-item';
+      $atts['class'] = 'c-footer-navigation__list-item';
     }
     return $atts;
 }
 add_filter('nav_menu_link_attributes', 'add_menu_link_attr', 1, 10);
 
 function add_menu_link_class() {
-    return array('m-global-navigation__list-item');
+    return array('c-global-navigation__list-item');
 }
 add_filter('nav_menu_css_class', 'add_menu_link_class', 10, 4);
 
 function add_sub_menu_link_class() {
-    return array('m-global-navigation__sub-menu');
+    return array('c-global-navigation__sub-menu');
 }
 add_action('nav_menu_submenu_css_class', 'add_sub_menu_link_class');
 
