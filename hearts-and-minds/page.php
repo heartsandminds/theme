@@ -7,6 +7,7 @@
  */
 
 get_header();
+$parent_page = has_children();
 
 if ( has_post_thumbnail() ) {
 ?>
@@ -22,13 +23,27 @@ if ( has_post_thumbnail() ) {
 <!-- Main content start -->
 <main class="t-full-width" id="main-section">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<article>
-			<h1 class="a-heading u-underline u-align-center"><?php the_title() ?></h1>
-			<?php the_content() ?>
-		</article>
-	<?php endwhile; endif; ?>
+        <?php if ($parent_page) : ?>
+            <article class="t-blog-article">
+                <div class="t-blog-article-content">
+                    <h1 class="a-heading u-underline"><?php the_title() ?></h1>
+                    <?php the_content() ?>
+                </div>
+                <div class="t-blog-article-latest">
+                    <img src="<?php echo get_field( "illustration_image_1" ); ?>" alt="">
+                </div>
+            </article>
+        <?php else : ?>
+            <article class="t-left-content">
+                <h1 class="a-heading u-underline"><?php the_title() ?></h1>
+                <?php the_content() ?>
+            </article>
+        <?php endif; ?>
+    <?php endwhile; endif; ?>
 
 <?php
+
+if (has_children()) :
 
 $args = array(
 	'post_type'      => 'page',
@@ -44,40 +59,42 @@ $who_we_help_query = new WP_Query( $args );
 if ( $who_we_help_query->have_posts() ) : ?>
 	<?php 
 	if($post->post_parent) {
-	  $parent_title = get_the_title($post->post_parent);
-	?>
-    <h2 class="a-heading u-underline u-align-center"><?php echo $parent_title; ?></h2>
-	<?php
-	} 
-	?>
-    <div class="c-cards">
-    <?php while ( $who_we_help_query->have_posts() ) : $who_we_help_query->the_post(); ?>
-        <div class="c-card">
-            <div class="a-image ">
-            <?php 
-                if ( has_post_thumbnail() ) {
-                ?>
-                    <img src="<?php the_post_thumbnail_url(); ?>" alt="">
-                <?php
-                } 
-                ?>
-            </div>
-    
-            <div class="c-card__text">
-                <h3 class="a-heading c-card__heading"><?php the_title(); ?></h3>
-            </div>
-
-            <a class="c-card__link" href="<?php the_permalink(); ?>">
-                Read more<span class="u-visually-hidden"> about <?php the_title(); ?></span>
-            </a>  
+        $parent_title = get_the_title($post->post_parent);
+        ?>
+        <h2 class="a-heading u-underline u-align-center"><?php echo $parent_title; ?></h2>
+        <?php
+        } 
+        ?>
+        <div class="c-cards">
+        <?php while ( $who_we_help_query->have_posts() ) : $who_we_help_query->the_post(); ?>
+            <a class="c-card" href="<?php the_permalink(); ?>">
+                <div class="a-image ">
+                <?php 
+                    if ( has_post_thumbnail() ) {
+                    ?>
+                        <img src="<?php the_post_thumbnail_url(); ?>" alt="">
+                    <?php
+                    } 
+                    ?>
+                </div>
+        
+                <div class="c-card__text">
+                    <h3 class="a-heading c-card__heading"><?php the_title(); ?></h3>
+                </div>
+            </a>
+        <?php endwhile; ?>
         </div>
-    <?php endwhile; ?>
-    </div>
-    <?php wp_reset_postdata(); ?>
- 
-<?php endif; ?>
+        <?php 
+        wp_reset_postdata();
+    endif;
+endif; 
+?>
 </main>
 <!-- Main content end -->
 <?php
-get_footer('donate');
+if ($parent_page) :
+    get_footer('donate');
+else :
+    get_footer();
+endif;
 ?>

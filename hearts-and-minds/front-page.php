@@ -72,7 +72,7 @@ if ( $who_we_help_query->have_posts() ) : ?>
     <h2 class="a-heading u-underline u-align-center">Who we help</h2>
     <div class="c-cards">
     <?php while ( $who_we_help_query->have_posts() ) : $who_we_help_query->the_post(); ?>
-        <div class="c-card">
+        <a class="c-card" href="<?php the_permalink(); ?>">
             <div class="a-image ">
             <?php 
                 if ( has_post_thumbnail() ) {
@@ -82,15 +82,10 @@ if ( $who_we_help_query->have_posts() ) : ?>
                 } 
                 ?>
             </div>
-    
             <div class="c-card__text">
                 <h3 class="a-heading c-card__heading"><?php the_title(); ?></h3>
             </div>
-
-            <a class="c-card__link" href="<?php the_permalink(); ?>">
-                Read more<span class="u-visually-hidden"> about <?php the_title(); ?></span>
-            </a>  
-        </div>
+        </a>
     <?php endwhile; ?>
     </div>
     <?php wp_reset_postdata(); ?>
