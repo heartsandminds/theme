@@ -42,25 +42,60 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
         <div class="t-blog-article">
             <div class="t-blog-article-content">
                 <?php the_content() ?>
-                <div class="c-team-member c-team-member--author">
-                    <div class="a-image c-team-member__image">
-                        <?php 
-                            if ( has_post_thumbnail() ) {
-                            ?>
-                                <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?> profile picture">
-                            <?php
-                            } 
+                <?php
+                    $post_object = get_field('team_member');
+
+                    if ($post_object): 
+                        $post = $post_object;
+                        setup_postdata($post); 
                         ?>
-                    </div>
-                    <div class="c-team-member__text">
-                        <p class="c-team-member__name"><?php the_title(); ?></p>
-                        <p class="c-team-member__title"><?php echo get_field( "description" ); ?></p>
-                        <a class="c-team-member__email" href="mailto:<?php echo get_field( "email" ); ?>"><?php echo get_field( "email" ); ?></a>
-                    </div>
-                </div>
+                        <div class="c-team-member c-team-member--author">
+                            <div class="a-image c-team-member__image">
+                                <?php 
+                                    if (has_post_thumbnail()) {
+                                    ?>
+                                        <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?> profile picture">
+                                    <?php
+                                    } 
+                                ?>
+                            </div>
+                            <div class="c-team-member__text">
+                                <p class="c-team-member__name"><?php the_title(); ?></p>
+                                <p class="c-team-member__title"><?php echo get_field( "title" ); ?></p>
+                                <a class="c-team-member__email" href="mailto:<?php echo get_field( "email" ); ?>"><?php echo get_field( "email" ); ?></a>
+                            </div>
+                        </div>
+                        <?php wp_reset_postdata(); 
+                    endif;
+                ?>
             </div>
             <div class="t-blog-article-latest">
-
+                <h2 class="u-color-primary u-h1-blog">Latest articles</h2>
+                <ul class="c-latest-articles">
+                <?php
+                    $args = array(
+                        'numberposts'   => '5',
+                        'category__in'  => get_cat_ID('News'),
+                    );
+                    $recent_posts = wp_get_recent_posts($args);
+                    foreach ($recent_posts as $recent) { ?>
+                        <li class="c-latest-article">
+                        <?php if (has_post_thumbnail()) { ?>
+                            <div class="c-latest-article__image" style="background-image: url(<?php echo get_the_post_thumbnail_url($recent["ID"]); ?>)"></div>
+                            <?php } ?> 
+                            <div class="c-latest-article__details">
+                                <a href="<?php echo get_permalink($recent["ID"]) ?>"><?php echo $recent["post_title"] ?></a>
+                                <div class="c-latest-article__meta">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>
+                                    <span><?php echo get_the_date(); ?></span>
+                                </div>
+                            </div>
+                        </li>
+                    <?php
+                    }
+                    wp_reset_query();
+                ?>
+                </ul>
             </div>
         </div>
     </article>

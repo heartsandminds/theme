@@ -30,10 +30,10 @@ add_action( 'init', 'ham_register_menus' );
 
 function add_menu_link_attr($atts, $item, $args)
 {
-    if( $args->theme_location == 'header-menu' ) {
+    if ($args->theme_location == 'header-menu') {
         $atts['class'] = 'a-menu-link';
     }
-    if( $args->theme_location == 'footer-menu' ) {
+    if ($args->theme_location == 'footer-menu') {
       $atts['class'] = 'c-footer-navigation__list-item';
     }
     return $atts;

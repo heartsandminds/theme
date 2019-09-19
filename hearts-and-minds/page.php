@@ -28,13 +28,50 @@ if ( has_post_thumbnail() ) {
                 <div class="t-blog-article-content">
                     <h1 class="a-heading u-underline"><?php the_title() ?></h1>
                     <?php the_content() ?>
+                    <?php if (get_field('quote_text_1')):
+                        if (get_field('position_1') == 'main'): ?>
+                            <blockquote class="c-quote">
+                                <p class="c-quote__text"><?php the_field('quote_text_1'); ?><p>
+                                <p class="c-quote__source"><?php the_field('quote_author_1'); ?></p>
+                            </blockquote>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                    <?php if (get_field('quote_text_2')):
+                        if (get_field('position_2') == 'main'): ?>
+                            <blockquote class="c-quote">
+                                <p class="c-quote__text"><?php the_field('quote_text_2'); ?><p>
+                                <p class="c-quote__source"><?php the_field('quote_author_2'); ?></p>
+                            </blockquote>
+                        <?php endif; ?>
+                    <?php endif; ?>
                 </div>
-                <div class="t-blog-article-latest">
-                    <img src="<?php echo get_field( "illustration_image_1" ); ?>" alt="">
-                </div>
+                <div class="t-blog-article-right">
+                    <?php if (get_field('illustration_image_1')): ?>
+                        <img src="<?php echo get_field("illustration_image_1"); ?>" alt="">
+                    <?php endif; ?>
+                    <?php if (get_field('illustration_image_2')): ?>
+                        <img src="<?php echo get_field("illustration_image_2"); ?>" alt="">
+                    <?php endif; ?>
+                    <?php if (get_field('quote_text_1')):
+                        if (get_field('position_1') == 'right'): ?>
+                            <blockquote class="c-quote">
+                                <p class="c-quote__text"><?php the_field('quote_text_1'); ?><p>
+                                <p class="c-quote__source"><?php the_field('quote_author_1'); ?></p>
+                            </blockquote>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                    <?php if (get_field('quote_text_2')):
+                        if (get_field('position_2') == 'right'): ?>
+                            <blockquote class="c-quote">
+                                <p class="c-quote__text"><?php the_field('quote_text_2'); ?><p>
+                                <p class="c-quote__source"><?php the_field('quote_author_2'); ?></p>
+                            </blockquote>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                </div> 
             </article>
         <?php else : ?>
-            <article class="t-left-content">
+            <article class="t-content-max-width">
                 <h1 class="a-heading u-underline"><?php the_title() ?></h1>
                 <?php the_content() ?>
             </article>
@@ -43,7 +80,7 @@ if ( has_post_thumbnail() ) {
 
 <?php
 
-if (has_children()) :
+if (get_field('related_pages') == 'show'):
 
 $args = array(
 	'post_type'      => 'page',
@@ -92,7 +129,7 @@ endif;
 </main>
 <!-- Main content end -->
 <?php
-if ($parent_page) :
+if (get_field('donate') == 'show'):
     get_footer('donate');
 else :
     get_footer();
