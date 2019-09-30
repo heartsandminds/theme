@@ -32,8 +32,4 @@ Articles (posts) can be set to one or more categories so it appears on the requi
 git clone https://github.com/heartsandminds/theme.git
 ```
 
-* Download the development database file from [database.sql](https://github.com/heartsandminds/database)
-
-* Navigate to http://localhost:8888/phpMyAdmin/?lang=en and import the database file.
-
-* Navigate to http://localhost:8888/heartsandminds to view the development website.
+* Follow the development setup instructions from [heartsandminds/dev-setup](https://github.com/heartsandminds/dev-setup)
