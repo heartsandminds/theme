@@ -20,17 +20,18 @@
         </div>
         <div class="c-footer__col">
             <p>Sign up to receive our newsletter:</p>
-            <form>
-                <label>
+            <form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="5B5E7037DA78A748374AD499497E309E26BEA9F64D1B3AE8AB08FF8E1C5FFEF908B7BDEF971136C9F53D4D10AAD74111A532A316B6751E30E668318F36869BE5">
+                <label for="fieldName">
                     Name:<br>
-                    <input class="c-footer__input" type="text" name="name">
+                    <input class="c-footer__input" type="text" name="cm-name" id="fieldName">
                 </label>
-                <label>
+                <label for="fieldEmail">
                     Email:<br>
-                    <input class="c-footer__input" type="text" name="email">
+                    <input class="c-footer__input js-cm-email-input" name="cm-ukirlli-ukirlli" type="email" id="fieldEmail" required>
                 </label>
-                <button class="a-button" type="submit">Sign up</button>
+                <button class="a-button js-cm-submit-button" type="submit">Sign up</button>
             </form>
+            <script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
         </div>
         <div class="c-footer__col">
             <p>Follow us:</p>
