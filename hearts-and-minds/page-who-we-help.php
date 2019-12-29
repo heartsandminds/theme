@@ -11,7 +11,7 @@ get_header();
 if ( has_post_thumbnail() ) {
 ?>
 <div class="c-hero">
-	<div class="a-image">
+	<div class="c-hero__image">
 		<img src="<?php the_post_thumbnail_url(); ?>" alt="">
 	</div>
 </div>

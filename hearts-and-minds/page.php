@@ -12,7 +12,7 @@ $parent_page = has_children();
 if ( has_post_thumbnail() ) {
 ?>
 <div class="c-hero">
-	<div class="a-image">
+	<div class="c-hero__image">
 		<img src="<?php the_post_thumbnail_url(); ?>" alt="">
 	</div>
 </div>
@@ -30,18 +30,18 @@ if ( has_post_thumbnail() ) {
                     <?php the_content() ?>
                     <?php if (get_field('quote_text_1')):
                         if (get_field('position_1') == 'main'): ?>
-                            <blockquote class="c-quote">
+                            <div class="c-quote">
                                 <p class="c-quote__text"><?php the_field('quote_text_1'); ?><p>
                                 <p class="c-quote__source"><?php the_field('quote_author_1'); ?></p>
-                            </blockquote>
+                            </div>
                         <?php endif; ?>
                     <?php endif; ?>
                     <?php if (get_field('quote_text_2')):
                         if (get_field('position_2') == 'main'): ?>
-                            <blockquote class="c-quote">
+                            <div class="c-quote">
                                 <p class="c-quote__text"><?php the_field('quote_text_2'); ?><p>
                                 <p class="c-quote__source"><?php the_field('quote_author_2'); ?></p>
-                            </blockquote>
+                            </div>
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>
@@ -54,18 +54,18 @@ if ( has_post_thumbnail() ) {
                     <?php endif; ?>
                     <?php if (get_field('quote_text_1')):
                         if (get_field('position_1') == 'right'): ?>
-                            <blockquote class="c-quote">
+                            <div class="c-quote">
                                 <p class="c-quote__text"><?php the_field('quote_text_1'); ?><p>
                                 <p class="c-quote__source"><?php the_field('quote_author_1'); ?></p>
-                            </blockquote>
+                            </div>
                         <?php endif; ?>
                     <?php endif; ?>
                     <?php if (get_field('quote_text_2')):
                         if (get_field('position_2') == 'right'): ?>
-                            <blockquote class="c-quote">
+                            <div class="c-quote">
                                 <p class="c-quote__text"><?php the_field('quote_text_2'); ?><p>
                                 <p class="c-quote__source"><?php the_field('quote_author_2'); ?></p>
-                            </blockquote>
+                            </div>
                         <?php endif; ?>
                     <?php endif; ?>
                 </div> 

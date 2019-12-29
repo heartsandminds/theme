@@ -19,7 +19,7 @@ $news_post = get_posts($args);
 if( $news_post ) {
 ?>
 <div class="c-hero">
-    <div class="a-image">
+    <div class="c-hero__image">
         <img src="<?php echo get_the_post_thumbnail_url($news_post[0]->ID, 'full') ?>" alt="">
     </div>
 </div>
@@ -36,7 +36,7 @@ $news_query = new WP_Query( array( 'category_name' => 'news' ) );
 if ( $news_query->have_posts() ) : ?>
     <div class="c-cards c-cards--blog">
     <?php while ( $news_query->have_posts() ) : $news_query->the_post(); ?>
-        <div class="c-card">
+        <a class="c-card" href="<?php the_permalink(); ?>">
             <div class="a-image">
             <?php 
                 if ( has_post_thumbnail() ) {
@@ -55,11 +55,7 @@ if ( $news_query->have_posts() ) : ?>
                 </div>
                 <p class="a-text"><?php the_excerpt(); ?></p>
             </div>
-
-            <a class="c-card__link" href="<?php the_permalink(); ?>">
-                Read more<span class="u-visually-hidden"> about <?php the_title(); ?></span>
-            </a>  
-        </div>
+        </a>
     <?php endwhile; ?>
     </div>
     <?php wp_reset_postdata(); ?>
