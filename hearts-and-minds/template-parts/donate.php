@@ -1,6 +1,6 @@
 <?php
 /**
- * The footer template file
+ * The Donate template part
  *
  * @package HeartsAndMinds
  * @since 1.0.0
@@ -23,5 +23,3 @@
         </div>
     </div>
 </div>
-
-<?php get_template_part('footer'); ?>

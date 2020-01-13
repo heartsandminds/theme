@@ -37,7 +37,7 @@ if ( $news_query->have_posts() ) : ?>
     <div class="c-cards c-cards--blog">
     <?php while ( $news_query->have_posts() ) : $news_query->the_post(); ?>
         <a class="c-card" href="<?php the_permalink(); ?>">
-            <div class="a-image">
+            <div class="c-card__image c-card__image--blog">
             <?php 
                 if ( has_post_thumbnail() ) {
                 ?>

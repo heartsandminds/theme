@@ -91,19 +91,22 @@ if ( $about_us_query->have_posts() ) : ?>
     <h2 class="a-heading u-underline u-align-center">Our Values</h2>
     <div class="c-cards c-cards--our-values">
     <?php while ( $about_us_query->have_posts() ) : $about_us_query->the_post(); ?>
-        <div class="c-card">
-        <?php 
-            if ( has_post_thumbnail() ) {
-            ?>
-                <img class="c-card__image" src="<?php the_post_thumbnail_url(); ?>" alt="">
-            <?php
-            } 
-            ?>
+        <a class="c-card" href="<?php the_permalink(); ?>">
+            <div class="c-card__image c-card__image--values">
+            <?php 
+                if ( has_post_thumbnail() ) {
+                ?>
+                    <img src="<?php the_post_thumbnail_url(); ?>" alt="">
+                <?php
+                } 
+                ?>
+            </div>
+
             <div class="c-card__text">
-                <h3><?php the_title(); ?></h3>
+                <h3 class="a-heading c-card__heading"><?php the_title(); ?></h3>
                 <?php the_content(); ?>
             </div>
-        </div>
+        </a>
     <?php endwhile; ?>
     </div>
     <?php wp_reset_postdata(); ?>
@@ -125,8 +128,8 @@ if ( $who_we_help_query->have_posts() ) : ?>
     <h2 class="a-heading u-underline u-align-center">More about Hearts & Minds</h2>  
     <div class="c-cards">
     <?php while ( $who_we_help_query->have_posts() ) : $who_we_help_query->the_post(); ?>
-        <div class="c-card">
-            <div class="a-image ">
+        <a class="c-card" href="<?php the_permalink(); ?>">
+            <div class="c-card__image c-card__image--narrow">
             <?php 
                 if ( has_post_thumbnail() ) {
                 ?>
@@ -137,11 +140,9 @@ if ( $who_we_help_query->have_posts() ) : ?>
             </div>
     
             <div class="c-card__text">
-                <h3 class="a-heading c-card__heading">
-                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                </h3>
+                <h3 class="a-heading c-card__heading"><?php the_title(); ?></h3>
             </div>
-        </div>
+        </a>
     <?php endwhile; ?>
     </div>
     <?php wp_reset_postdata(); ?>
@@ -151,5 +152,5 @@ if ( $who_we_help_query->have_posts() ) : ?>
 
 <!-- Main content end -->
 <?php
-get_footer('donate');
+get_footer();
 ?>

@@ -7,7 +7,11 @@
  */
 ?>
 
-<?php get_template_part('donate'); ?>
+<?php 
+if (get_field('donate') == 'show'):
+    get_template_part('template-parts/donate');
+endif;
+?>
 
 <footer class="c-footer" role="contentinfo">
     <div class="c-footer__content">
@@ -68,7 +72,7 @@
         ?>
     </nav>
 </footer>
-<script charset="utf-8" src="<?php bloginfo('template_directory'); ?>/js/scripts.js" async></script>
+<script charset="utf-8" src="<?php bloginfo('template_directory'); ?>/assets/js/scripts.js" async></script>
 </body>
 </html>
 <?php wp_footer(); ?>

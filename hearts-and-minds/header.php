@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
 <title>Hearts and Minds</title>
-<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/icons/favicon.png">
+<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/assets/images/icons/favicon.png">
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css" type="text/css" media="all">
 <?php do_action('wp_head'); ?>
 </head>
@@ -23,7 +23,7 @@
 <header class="c-header" role="banner">
 	<div class="c-header__content">
 		<a href="<?php echo home_url(); ?>" class="c-logo-link">
-			<img class="a-logo" src="<?php bloginfo('template_directory'); ?>/images/logo/logo.png" alt="hearts and minds logo">
+			<img class="a-logo" src="<?php bloginfo('template_directory'); ?>/assets/images/logo/logo.png" alt="hearts and minds logo">
 		</a>
 		<button class="c-global-navigation__menu-button">
 			<div class="c-global-navigation__menu-icon">

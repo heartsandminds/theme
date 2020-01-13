@@ -105,7 +105,7 @@ if ( $who_we_help_query->have_posts() ) : ?>
         <div class="c-cards">
         <?php while ( $who_we_help_query->have_posts() ) : $who_we_help_query->the_post(); ?>
             <a class="c-card" href="<?php the_permalink(); ?>">
-                <div class="a-image ">
+                <div class="c-card__image c-card__image--narrow">
                 <?php 
                     if ( has_post_thumbnail() ) {
                     ?>
@@ -128,10 +128,7 @@ endif;
 ?>
 </main>
 <!-- Main content end -->
+
 <?php
-if (get_field('donate') == 'show'):
-    get_footer('donate');
-else :
-    get_footer();
-endif;
+get_footer();
 ?>
