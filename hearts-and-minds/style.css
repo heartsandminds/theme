@@ -281,6 +281,14 @@ blockquote p:before,
     width: 100%
 }
 
+.a-image--illustration img {
+    width: auto;
+}
+
+.a-image--illustration:not(:last-child) {
+    margin-bottom: 40px;
+}
+
 .a-menu-link {
     color: #575757;
     padding: 8px 4px;

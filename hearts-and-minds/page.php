@@ -47,10 +47,14 @@ if ( has_post_thumbnail() ) {
                 </div>
                 <div class="t-blog-article-right">
                     <?php if (get_field('illustration_image_1')): ?>
-                        <img src="<?php echo get_field("illustration_image_1"); ?>" alt="">
+                        <div class="a-image a-image--illustration">
+                            <img src="<?php echo get_field("illustration_image_1"); ?>" alt="">
+                        </div>
                     <?php endif; ?>
                     <?php if (get_field('illustration_image_2')): ?>
-                        <img src="<?php echo get_field("illustration_image_2"); ?>" alt="">
+                        <div class="a-image a-image--illustration">
+                            <img src="<?php echo get_field("illustration_image_2"); ?>" alt="">
+                        </div>
                     <?php endif; ?>
                     <?php if (get_field('quote_text_1')):
                         if (get_field('position_1') == 'right'): ?>
@@ -109,7 +113,7 @@ if ( $who_we_help_query->have_posts() ) : ?>
                 <?php 
                     if ( has_post_thumbnail() ) {
                     ?>
-                        <img src="<?php the_post_thumbnail_url(); ?>" alt="">
+                        <img src="<?php the_post_thumbnail_url('medium_large'); ?>" alt="">
                     <?php
                     } 
                     ?>

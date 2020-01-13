@@ -45,7 +45,7 @@ if ( $who_we_help_query->have_posts() ) : ?>
             <?php 
                 if ( has_post_thumbnail() ) {
                 ?>
-                    <img src="<?php the_post_thumbnail_url(); ?>" alt="">
+                    <img src="<?php the_post_thumbnail_url('medium_large'); ?>" alt="">
                 <?php
                 } 
                 ?>
