@@ -14,12 +14,21 @@ https://heartsandminds.github.io/frontend/?p=templates-homepage
 
 Articles (posts) can be set to one or more categories so it appears on the required pages.
 
-| Category    | Description                                    |
-| ----------- | ---------------------------------------------- |
-| Front page  | Displays the article on the homepage           |
-| News        | Displays the article on the news page          |
-| How we help | Displays the article on the 'How we help' page |
-| Who we help | Displays the article on the 'Who we help' page |
+| Category    | Description                                                                          |
+| ----------- | ------------------------------------------------------------------------------------ |
+| Front page  | Displays the article on the homepage, the most recent 3 articles will be displayed   |
+| News        | Displays the article on the news page, this is the default category for all articles |
+
+### Content
+
+The following types of content can using the Content menu item.
+
+| Category       | Description                                    |
+| -------------- | ---------------------------------------------- |
+| About us       | Displays the article on the homepage           |
+| Our values     | Displays the article on the news page          |
+| Our impact     | Displays the article on the 'How we help' page |
+| Survey results | Displays the article on the 'Who we help' page |
 
 ## Developing
 

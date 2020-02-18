@@ -28,9 +28,9 @@ if ( has_post_thumbnail() ) {
 
 <?php
 $args = array(
-    'post_type'        => 'post',
+    'post_type'        => 'content',
     'posts_per_page'   => -1,
-    'category__in'    => get_cat_ID('About Us'),
+    'category__in'    => get_cat_ID('about-us'),
     'include_children' => false,
     'order'            => 'ASC',
     'orderby'          => 'menu_order'
@@ -79,7 +79,7 @@ if ( $about_us_query->have_posts() ) : ?>
 $args = array(
     'post_type'        => 'post',
     'posts_per_page'   => -1,
-    'category__in'    => get_cat_ID('Our Values'),
+    'category__in'    => get_cat_ID('Our Impact'),
     'include_children' => false,
     'order'            => 'ASC',
     'orderby'          => 'menu_order'

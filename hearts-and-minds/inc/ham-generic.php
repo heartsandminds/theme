@@ -23,3 +23,5 @@ function has_children() {
         return true;
     }
 }
+
+?>
