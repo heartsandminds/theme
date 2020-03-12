@@ -23,17 +23,23 @@ if ( has_post_thumbnail() ) {
 <main class="t-full-width">
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <h1 class="a-heading u-underline u-align-center"><?php the_title() ?></h1>
-    <?php the_content() ?>
+    <div class="a-sub-heading u-align-center">
+        <?php the_content() ?>
+    </div>
 <?php endwhile; endif; ?>
 
 <?php
 $args = array(
     'post_type'        => 'content',
     'posts_per_page'   => -1,
-    'category__in'    => get_cat_ID('about-us'),
-    'include_children' => false,
     'order'            => 'ASC',
-    'orderby'          => 'menu_order'
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'type',
+            'field' => 'slug',
+            'terms' => array ('about-us')
+        )
+    )
 );
 
 $about_us_query = new WP_Query( $args );
@@ -77,12 +83,16 @@ if ( $about_us_query->have_posts() ) : ?>
 
 <?php
 $args = array(
-    'post_type'        => 'post',
+    'post_type'        => 'content',
     'posts_per_page'   => -1,
-    'category__in'    => get_cat_ID('Our Impact'),
-    'include_children' => false,
     'order'            => 'ASC',
-    'orderby'          => 'menu_order'
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'type',
+            'field' => 'slug',
+            'terms' => array ('our-values')
+        )
+    )
 );
 
 $about_us_query = new WP_Query( $args );

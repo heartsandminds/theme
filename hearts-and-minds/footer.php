@@ -71,7 +71,7 @@ endif;
         ?>
     </nav>
 </footer>
-<script src="<?php bloginfo('template_directory'); ?>/assets/js/scripts.js" async></script>
+<script><?php include 'assets/js/scripts.min.js'; ?></script>
 <script src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js" async></script>
 </body>
 </html>
