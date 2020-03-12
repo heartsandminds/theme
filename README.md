@@ -14,21 +14,22 @@ https://heartsandminds.github.io/frontend/?p=templates-homepage
 
 Articles (posts) can be set to one or more categories so it appears on the required pages.
 
-| Category    | Description                                                                          |
-| ----------- | ------------------------------------------------------------------------------------ |
-| Front page  | Displays the article on the homepage, the most recent 3 articles will be displayed   |
-| News        | Displays the article on the news page, this is the default category for all articles |
+| Category     | Description                                                                        | Slug         |
+| ------------ | ---------------------------------------------------------------------------------- | ------------ |
+| Front page   | Displays articles on the homepage, the most recent 3 articles will be displayed    | front-page   |
+| News         | Displays articles on the news page, this is the default category for all articles  | news         |
+| Case Studies | Displays articles on the impact page, the most recent 3 articles will be displayed | case-studies |
 
 ### Content
 
 The following types of content can using the Content menu item.
 
-| Category       | Description                                    |
-| -------------- | ---------------------------------------------- |
-| About us       | Displays the article on the homepage           |
-| Our values     | Displays the article on the news page          |
-| Our impact     | Displays the article on the 'How we help' page |
-| Survey results | Displays the article on the 'Who we help' page |
+| Type           | Description                                       | Slug           |
+| -------------- | ------------------------------------------------- | -------------- |
+| About us       | Displays the main articles on the about us page   | about-us       |
+| Our values     | Displays charity values on the about us page      | our-values     |
+| Our impact     | Displays the impact cards on the 'impact' page    | our-impact     |
+| Survey results | Displays the survey results on the 'impact' page  | survey-results |
 
 ## Developing
 
