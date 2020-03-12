@@ -53,7 +53,7 @@
 <link rel="preload" href="<?php bloginfo('template_directory'); ?>/assets/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin="">
 <link rel="preload" href="<?php bloginfo('template_directory'); ?>/assets/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin="">
 <style>
-<?php include 'css/style.min.css'; ?>
+<?php include 'assets/css/style.css'; ?>
 </style>
 <?php do_action('wp_head'); ?>
 </head>

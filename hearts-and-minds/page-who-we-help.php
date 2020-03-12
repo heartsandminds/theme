@@ -23,7 +23,9 @@ if ( has_post_thumbnail() ) {
 <main class="t-full-width" id="main-section">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<h1 class="a-heading u-underline u-align-center"><?php the_title() ?></h1>
-        <?php the_content() ?>
+        <div class="a-sub-heading u-align-center">
+            <?php the_content() ?>
+        </div>
 	<?php endwhile; endif; ?>
 <?php 
 

@@ -68,11 +68,6 @@ function create_type_taxonomy() {
 		'show_admin_column' => true,
 		'query_var'         => true,
 		'rewrite'           => array( 'slug' => 'type' ),
-		'capabilities'      => array(
-			'assign_terms' => 'manage_options',
-			'edit_terms'   => 'vendor',
-			'manage_terms' => 'vendor',
-		),
 		'show_in_nav_menus' => false
 	);
 
