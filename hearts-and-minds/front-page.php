@@ -24,8 +24,15 @@ if ( has_post_thumbnail() ) {
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<h1 class="a-heading u-underline u-align-center"><?php the_title() ?></h1>
 	<?php endwhile; endif; ?>
-<?php 
-$news_query = new WP_Query( array( 'category_name' => 'front-page' ) );
+<?php
+
+$args = array(
+    'posts_per_page'   => 3,
+    'order'            => 'DESC',
+    'category_name'    => 'front-page'
+);
+
+$news_query = new WP_Query($args);
 
 if ( $news_query->have_posts() ) : ?>
     <div class="c-cards">

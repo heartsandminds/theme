@@ -30,8 +30,14 @@ if( $news_post ) {
 <!-- Main content start -->
 <main class="t-full-width" id="main-section">
 <h1 class="a-heading u-underline">News</h1>
-<?php 
-$news_query = new WP_Query( array( 'category_name' => 'news' ) );
+<?php
+
+$args = array(
+    'order'            => 'DESC',
+    'category_name'    => 'news'
+);
+
+$news_query = new WP_Query($args);
 
 if ( $news_query->have_posts() ) : ?>
     <div class="c-cards c-cards--blog">
@@ -63,6 +69,8 @@ if ( $news_query->have_posts() ) : ?>
 <?php else : ?>
     <p><?php _e( 'No news articles are currently available.' ); ?></p>
 <?php endif; ?>
+
+<?php ham_numeric_pagination(); ?>
 
 </main>
 <!-- Main content end -->

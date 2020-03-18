@@ -41,4 +41,9 @@ require get_parent_theme_file_path( '/inc/ham-post-types.php' );
 */
 require get_parent_theme_file_path( '/inc/ham-meta.php' );
 
+/**
+* Implement the Archive pagination.
+*/
+require get_parent_theme_file_path( '/inc/ham-pagination.php' );
+
 ?>

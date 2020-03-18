@@ -70,7 +70,13 @@ if ( $about_us_query->have_posts() ) : ?>
     </div>
 <?php endif;
 
-$news_query = new WP_Query( array( 'category_name' => 'case-studies' ) );
+$args = array(
+    'posts_per_page'   => 3,
+    'order'            => 'DESC',
+    'category_name'    => 'case-studies'
+);
+
+$news_query = new WP_Query($args);
 
 if ( $news_query->have_posts() ) : ?>
     <h2 class="a-heading u-underline u-align-center">Case studies</h2>

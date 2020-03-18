@@ -24,4 +24,12 @@ function has_children() {
     }
 }
 
+/**
+ * Filter the except length to 20 words.
+ */
+function ham_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter('excerpt_length', 'ham_custom_excerpt_length', 999);
+
 ?>

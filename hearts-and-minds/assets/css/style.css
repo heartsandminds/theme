@@ -1081,6 +1081,27 @@ a.c-card:hover .c-card__heading,
     }
 }
 
+.c-pagination {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.c-pagination__list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.c-pagination__list-item {
+    padding: 0 10px;
+}
+
+.c-pagination__list-item--active .c-pagination__link {
+    color: #575757;
+    cursor: default;
+    text-decoration: none;
+}
+
 .t-blog-article {
     display: block;
     padding: 0 0 30px
