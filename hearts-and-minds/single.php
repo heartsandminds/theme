@@ -28,7 +28,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
             <?php 
                 if (has_post_thumbnail()) {
                 ?>
-                    <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_post_thumbnail_caption(); ?>">
+                    <div style="padding-top:56.25%;background:url('<?php the_post_thumbnail_url(); ?>') center / cover no-repeat"></div>
                 <?php
                 } 
             ?>
