@@ -25,6 +25,7 @@ if( $news_post ) {
 </div>
 <?php
 };
+wp_reset_postdata();
 ?>
 
 <!-- Main content start -->
@@ -32,16 +33,9 @@ if( $news_post ) {
 <h1 class="a-heading u-underline">News</h1>
 <?php
 
-$args = array(
-    'order'            => 'DESC',
-    'category_name'    => 'news'
-);
-
-$news_query = new WP_Query($args);
-
-if ( $news_query->have_posts() ) : ?>
+if ( have_posts() ) : ?>
     <div class="c-cards c-cards--blog">
-    <?php while ( $news_query->have_posts() ) : $news_query->the_post(); ?>
+    <?php while ( have_posts() ) : the_post(); ?>
         <a class="c-card" href="<?php the_permalink(); ?>">
             <div class="c-card__image c-card__image--blog">
             <?php 
@@ -64,7 +58,6 @@ if ( $news_query->have_posts() ) : ?>
         </a>
     <?php endwhile; ?>
     </div>
-    <?php wp_reset_postdata(); ?>
  
 <?php else : ?>
     <p><?php _e( 'No news articles are currently available.' ); ?></p>
